@@ -1,0 +1,10 @@
+RewriteEngine On
+# Не применять к существующим файлам 
+RewriteCond %{REQUEST_FILENAME} !-f
+# Не применять к существующим директориям
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule .* index.php [L]
+
+# При ридеректе может понадобиться, :
+# RewriteRule (.*)) index.php?$1 [L,QSA]

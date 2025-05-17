@@ -1,0 +1,32 @@
+
+ body {
+
+    background: #1e704fd6;
+    text-align: center;
+
+ }
+
+ h2, h3 {
+
+   font-weight: normal; /* Нормальная жирность */
+ }
+
+ .exception {
+   font-weight: bold;
+ }
+
+ table {
+  margin: auto;
+ }
+ 
+ .tableWebMaster{
+  display: block ruby;
+ }
+
+ 
+ 
+
+ 
+
+
+ 

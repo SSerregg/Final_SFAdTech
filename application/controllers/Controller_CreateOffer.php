@@ -1,0 +1,14 @@
+<?php
+
+
+class Controller_CreateOffer extends Model_CreateOffer {
+
+    function index(){
+
+        static::creareOffer();
+        header ('Location:/Client');
+        exit();
+    }
+
+
+}
