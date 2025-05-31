@@ -1,7 +1,7 @@
 <?php
 
 
-class Model_SubscribeWebMaster extends Model
+class Model_SubscribeWebMasterJS extends Model
 {
     protected static function stmt ($db, $offerID, $uLink, $webMaste, $uProcent) {
 
@@ -16,30 +16,20 @@ class Model_SubscribeWebMaster extends Model
 
     protected static function creareSubscribe () {
 
-        $offerID  =    $_POST['id'];
-        if($_SESSION['role']==='webmaster'){
-        $webMaster=   $_SESSION['username'];
+        $post = key($_POST);
+        $array_post = json_decode($post, true);
 
-        if($_POST['key'] !== $_SESSION['key']){
-            return;
-        }
-        $db   = Model::connect();
-    }elseif($_SESSION['role']==='admin'){
-        $webMaster = $_POST['webMaster'];
-        $db   = Model::connect();
-        $stmt_check = $db->prepare('SELECT * FROM `subscriptions` WHERE  id_offer=? AND web_master=?');
-        $stmt_check ->bindParam(1, $offerID);
-        $stmt_check ->bindParam(2, $webMaster);
-        $stmt_check ->execute();
-        $result_check = $stmt_check->FETCH(PDO::FETCH_ASSOC);
-        print_r($result_check);
-        if(!empty($result_check)){
-            header ('Location:/Admin');
-            exit();
-        }
-    }
+         $offerID  =$array_post['post_id'];
+    
+         $webMaster=   $_SESSION['username'];
 
-         
+      
+        if($array_post['post_key'] !== $_SESSION['key']){
+             return;
+        }
+
+        $db   = Model::connect();
+
          $stmt = $db->prepare('SELECT * FROM `offers` WHERE  id=?');
          $stmt ->bindParam(1, $offerID);
          $stmt ->execute();
@@ -84,12 +74,8 @@ class Model_SubscribeWebMaster extends Model
         $stmt_update = $db->prepare("UPDATE `offers` SET `craftsmen`=$mes_count WHERE  `id`=$id_res");
         $stmt_update ->execute();
 
-if($_SESSION['role']==='webmaster'){
-        header ('Location:/WebMaster');
-        exit();
-}elseif($_SESSION['role']==='admin'){
-        header ('Location:/Admin');
-        exit();
-    }
+        $array_front = [$offerID, $uLink, $uProcent];
+        $array_to_front = json_encode($array_front);
+        echo $array_to_front;
       } 
     }

@@ -10,5 +10,12 @@ class Controller_UnsubscribeWebMaster extends Model_UnsubscribeWebMaster {
         exit();
     }
 
+    function unsub(){
+
+        static::deleteSubscribeJS();
+
+        exit();
+    }
+
 
 }

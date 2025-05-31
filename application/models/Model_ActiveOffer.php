@@ -8,7 +8,7 @@ class Model_ActiveOffer extends Model
         $db        =    Model::connect();
 
         $id        =    $_POST['id'] ?? $_GET['id'];
-        $ownerName =    $_SESSION['username'];
+
         $forState  =    $_POST['state'] ?? $_GET['state'];
 
         if($forState==1){
@@ -20,6 +20,8 @@ class Model_ActiveOffer extends Model
            exit();
         }
 
+if($_SESSION['role']==='advertiser'){
+        $ownerName =    $_SESSION['username'];
         $stmt = $db->prepare("UPDATE `offers` SET `topicstate`=$state WHERE  `id`=? AND `ownername`= ?");
         $stmt ->bindParam(1, $id);
         $stmt ->bindParam(2, $ownerName);
@@ -30,5 +32,13 @@ class Model_ActiveOffer extends Model
                     header ('Location:/Client');
                     exit();
         }
+    }elseif($_SESSION['role']==='admin'){
+        $stmt = $db->prepare("UPDATE `offers` SET `topicstate`=$state WHERE  `id`=?");
+        $stmt ->bindParam(1, $id);
+        $stmt ->execute();
+
+                     header ('Location:/Admin');
+                    exit();
+    }
     }
 }

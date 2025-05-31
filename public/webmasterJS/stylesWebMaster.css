@@ -1,0 +1,56 @@
+
+ body {
+
+    background: #1e704fd6;
+    text-align: center;
+
+ }
+
+ h2, h3 {
+
+   font-weight: normal; /* Нормальная жирность */
+ }
+
+ .exception {
+   font-weight: bold;
+ }
+
+ table {
+  margin: auto;
+
+ }
+ 
+ .tableWebMaster{
+  display: flex;
+ }
+ .master{
+  background: #959a9bc7;
+  display: inline-flex;   
+ }
+ .ferd-tables{
+  display: block;
+  word-spacing: 9999px;
+     padding: 5px;
+   border: 7px;
+   border-style: solid;
+   min-width: 150px;
+   max-width: 200px;
+   min-height: 500px;
+   border-color:#a90505eb;
+ }
+ .main-tables{
+  min-width: 500px;
+ }
+ 
+ .statistik{
+  font-size: 1.4rem;
+  color: #3537ae;
+ }
+
+ 
+ 
+
+ 
+
+
+ 

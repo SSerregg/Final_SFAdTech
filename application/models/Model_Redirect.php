@@ -25,7 +25,7 @@ class Model_Redirect extends Model
             $webMaster = $_GET['wMaster'];
 
                 //1 Проверяем, что веб-мастер подписан на offer:
-                $stmtCheck = $db->prepare('SELECT * FROM subscriptions WHERE  id_offer=? && webmaster=?');
+                $stmtCheck = $db->prepare('SELECT * FROM subscriptions WHERE  id_offer=? && web_master=?');
                 $stmtCheck ->bindParam(1, $idOffer);
                 $stmtCheck ->bindParam(2, $webMaster);
                 $stmtCheck ->execute();

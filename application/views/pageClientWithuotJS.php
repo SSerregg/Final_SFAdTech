@@ -37,7 +37,7 @@ echo '<table border="1">
       </form><br>';
 }}
 ?>
-<script src="/redirectClient.js"></script>
+<script src="/clientJS/redirectClient.js"></script>
 <h2>Создать offer:</h2>
 <form action="/CreateOffer" method="post" >
     <input name="offerName" type="text" placeholder="offerName">

@@ -1,15 +1,15 @@
 <?php
 
-class Model_WebMasterStatistic extends Model 
+class Model_WebMasterStatisticJS extends Model 
 {
-    public static function standart()
+    public static function statistic()
     {
-        if(!empty($_POST['offer'])){
+     
         $db = Model::connect();
 
-        $data_start  =  $_POST['trip_start'];
-        $data_finish = $_POST['trip_finish'];
-        $id_offer    =       $_POST['offer'];
+        $data_start  =    $_GET['dateStart'];
+        $data_finish =   $_GET['dateFinish'];
+        $id_offer    =     $_GET['selector'];
         $web_master  = $_SESSION['username'];
 
         $stmt = $db->prepare('SELECT COUNT(*) AS count FROM redirect WHERE ? <= nowdate AND ? >= nowdate 
@@ -32,11 +32,10 @@ class Model_WebMasterStatistic extends Model
 
         $sum_cost_offer = $result_count_redirect['count'] * $result_cost_offer['costing'];
 
-        return [$result_count_redirect, $sum_cost_offer];
-        } else {
-            header ('Location:/WebMaster');
-            exit();
-        }
+        $array = [$result_count_redirect['count'], $sum_cost_offer];
 
+        $array_front = json_encode($array);
+
+        echo $array_front;
     }
 }

@@ -67,22 +67,22 @@ echo '<table border="1" class="table-dragg" id="id'.$value['id'].'" draggable="t
 </div>
 
 <h2>Создать offer:</h2>
-<form action="/CreateOffer" method="post" >
-    <input name="offerName" type="text" placeholder="offerName">
+
+    <input class="input_offerName" name="offerName" type="text" placeholder="offerName">
     <br>
     <br>
-    <input name="followCost" type="number" step=0.001 placeholder="стоимость перехода">
+    <input class="input_followCost" name="followCost" type="number" step=0.001 placeholder="стоимость перехода">
     <br>
     <br>
-    <input name="targetURL" type="url" placeholder="URL">
+    <input class="input_targetUR" name="targetURL" type="url" placeholder="URL">
     <br>
     <br>
-    <input name="description" type="text" placeholder="Темы сайта" id="bla">
+    <input class="input_description" name="description" type="text" placeholder="Темы сайта" id="bla">
     <br>
     <br>
-    <input name="create" type="submit" value="Создать" >
-</form>
-<br>
+    <input class="input_create" name="create" type="submit" value="Создать" >
+    <h2 class="headline3"> </h2>
+
 <br>
 <h2>Посмотреть расходы и кол-во переходов по offer-ам:</h2>
 <label for="start_date">Выберите дату: с</label>
@@ -112,8 +112,7 @@ foreach($data as $key => $value){
 <h2 class="headline"> </h2>
 <h2 class="headline2"> </h2>
     <br>
-<br>
-<br>
+
 <form action="/ExitFrom" method="get" >
     <input class="exit_button" name="exit" type="submit" value="Выход из системы!!!" >
 </form>

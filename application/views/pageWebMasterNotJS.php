@@ -4,8 +4,8 @@ $_SESSION['key'] = bin2hex(random_bytes(7));
 
 [$offers, $subscriptions] = $data;
 $arraySub = [];
-echo '<div class="master">';
-echo '<div class="main-tables">';
+
+
 if(!empty($offers)){
 foreach($offers as $key => $value){
 
@@ -43,7 +43,7 @@ echo '<div class="tableWebMaster">
     
           $arraySub = array_merge($arraySub, $valArray);
           //-----------------------------------
-          echo '<table border="1" class="table-dragg" id="id'.$value['id'].'"draggable="false">
+          echo '<table border="1">
     
           <tr>
             <td>Вы подписанны:</td>
@@ -67,22 +67,32 @@ echo '<div class="tableWebMaster">
       }
     }
      echo '</div>';
-if($selector!==1){
-  echo '<div class="input">
-        <input type="hidden" class="forid" value="'.$value['id'].'">
-        <input name="followCost" type="number" placeholder="не больше 90%" class="costing">
+if($selector===1){
+  echo '
+     <form action="/UnsubscribeWebMaster" method="post" >
+        <input type="hidden" name="key" value="'.$_SESSION['key'].'">
+        <input type="hidden" name="id" value="'.$value['id'].'">
+    
+        <input name="off" type="submit" value="отписаться" >
+      </form>';
+}else{
+  echo '
+     <form action="/SubscribeWebMaster" method="post" >
+        <input type="hidden" name="key" value="'.$_SESSION['key'].'">
+        <input type="hidden" name="id" value="'.$value['id'].'">
+        <label for="cost">Укажите вашу долю %:</label>
+        <input name="followCost" type="number" placeholder="не больше 90%" id="cost">
           <br>
-        <button type="button" class="submit">подписаться</button>
-        </div>';
+        <input name="on" type="submit" value="подписаться" >
+      </form>';
 }
 echo '<br>';
 }}
 ?>
-</div>
-<div class="ferd-tables">Чтобы отписаться перетащите сюда!!!</div>
-</div>
+
 <h2>Доходы и кол-во переходов по offer-у:</h2>
-<div>
+
+  <form action="/WebMasterStatistic" method="post" >
   <label for="start_date">Выберите дату: с</label>
   <input type="date" name="trip_start" value="2025-01-01" 
     min="2025-01-01" max="2029-12-31" id="start_date"/>
@@ -103,13 +113,13 @@ foreach ($arraySub as $key => $value){
 </select>
     <br>
     <br>
-    <button type="button" class="submit-statistik">>Посмотреть!<</button>
-</div>
-<div class="statistik"> </div>
+
+    <input type="submit" value=">Посмотреть!<" >
+</form>
 <br>
 <br>
 <form action="/ExitFrom" method="get" >
     <input name="exit" type="submit" value="Выход из системы!!!" >
 </form>
-<script>const userKey = "<?php echo $_SESSION['key'];?>"
-</script>
+
+<script src="/webmasterJS/redirectWebMaster.js"></script>

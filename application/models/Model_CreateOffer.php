@@ -15,6 +15,21 @@ class Model_CreateOffer extends Model
         $stmt->execute();
         } 
 
+
+    protected static function create_table($db){
+
+            $criate = $db->prepare("CREATE TABLE offers (
+                id INT PRIMARY KEY AUTO_INCREMENT , 
+                offer character varying(55) ,
+                cost FLOAT(10,3) UNSIGNED , 
+                targeturl character varying(55) ,
+                ownername character varying(40) ,
+                topic TEXT ,
+                craftsmen tinyint UNSIGNED NULL DEFAULT 0 ,
+                topicstate tinyint(1) NULL DEFAULT 1
+              );");
+            $criate->execute();
+    }
     protected static function creareOffer () {
 
         $offername   = (string)   $_POST['offerName'];
@@ -31,19 +46,41 @@ class Model_CreateOffer extends Model
         
         }catch(PDOException){
     
-            $criate = $db->prepare("CREATE TABLE offers (
-                id INT PRIMARY KEY AUTO_INCREMENT , 
-                offer character varying(55) ,
-                cost FLOAT(10,3) UNSIGNED , 
-                targeturl character varying(55) ,
-                ownername character varying(40) ,
-                topic TEXT ,
-                craftsmen tinyint UNSIGNED NULL DEFAULT 0 ,
-                topicstate tinyint(1) NULL DEFAULT 1
-              );");
-            $criate->execute();
+            self::create_table($db);
         
             self::stmt($db, $offername, $followCost, $targetURL, $description, $owner);
         }
+    }
+
+    protected static function create_offer_JS(){
+        $post = key($_POST);
+        $array_post = json_decode($post, true);
+        
+        $offername   =  $array_post['post_offerName'];
+        $followCost  =  $array_post['post_followCost'];
+        $targetURL   =  $array_post['post_targetURL'];
+        $description =  $array_post['post_description'];
+        $owner       =  $_SESSION['username'];
+
+        $db = Model::connect();
+
+            try{
+
+            self::stmt($db, $offername, $followCost, $targetURL, $description, $owner);
+        
+        }catch(PDOException){
+    
+            self::create_table($db);
+        
+            self::stmt($db, $offername, $followCost, $targetURL, $description, $owner);
+        }
+
+        $stmt = $db->prepare("SELECT id, craftsmen FROM offers ORDER BY id DESC LIMIT 1");
+        $stmt->execute();
+        $result = $stmt->FETCH(PDO::FETCH_ASSOC);
+
+        array_push($array_post, $result['id'], $result['craftsmen']);
+        $array_out = json_encode($array_post);
+        echo $array_out;
     }
 }

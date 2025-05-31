@@ -20,7 +20,7 @@
  }
  
  .tableWebMaster{
-  display: block ruby;
+  display: block;
  }
  .exit_button{
   background: #701e1ed6;
@@ -46,12 +46,12 @@
    min-height: 500px;
  }
 #zone-active{
-        margin-left: auto;
-    border-color: rgba(20, 128, 4, 0.7);
+  margin-left: auto;
+  border-color:#29ab4ea2;
 }
 #zone-inactive{
-      border-color: rgba(190, 0, 0, 0.632); 
-    margin-right: auto;
+  border-color:#ab2929b9; 
+  margin-right: auto;
 }
  
 

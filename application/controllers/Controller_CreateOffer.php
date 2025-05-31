@@ -10,5 +10,8 @@ class Controller_CreateOffer extends Model_CreateOffer {
         exit();
     }
 
+    function create(){
+        static::create_offer_JS();
+    }
 
 }

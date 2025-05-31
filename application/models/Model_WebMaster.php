@@ -19,7 +19,7 @@ class Model_WebMaster extends Model
         }
 
         try{  
-            $stmtSub = $db->prepare('SELECT * FROM subscriptions WHERE  webmaster=?');
+            $stmtSub = $db->prepare('SELECT * FROM subscriptions WHERE  web_master=?');
             $stmtSub->bindParam(1, $_SESSION['username']);
             
             $stmtSub->execute();

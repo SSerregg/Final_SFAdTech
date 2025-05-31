@@ -1,14 +1,14 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
-<noscript><meta http-equiv="refresh" content="0;URL=/client/bypass"/>
+<noscript><meta http-equiv="refresh" content="0;URL=/WebMaster/bypass"/>
 </noscript>
 <meta charset="utf-8"> 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta content="true" name="HandheldFriendly" />
 <meta content="width" name="MobileOptimized" />
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="stylesheet" href="/clientJS/stylesClient.css" type="text/css"/>
+<link rel="stylesheet" href="/webmasterJS/stylesWebMaster.css" type="text/css"/>
 <title>Система-редирект</title>
 </head> 
 <body>
@@ -24,8 +24,7 @@
         <br>
         <h2 class="exception">2025 PHP-53</h2>
     </footer>
-    <script src="/clientJS/clientdraggble.js"></script>
-    <script src="/clientJS/script.js"></script>
-    <script src="/clientJS/createoffer.js"></script>
+    <script src="/webmasterJS/script.js"></script>
+   <script src="/webmasterJS/scriptStatistik.js"></script>
 </body> 
 </html>
