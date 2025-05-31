@@ -43,7 +43,7 @@ echo '<div class="tableWebMaster">
     
           $arraySub = array_merge($arraySub, $valArray);
           //-----------------------------------
-          echo '<table border="1" class="table-dragg" id="id'.$value['id'].'"draggable="false">
+          echo '<table border="1" class="table-dragg" id="id'.$value['id'].'"draggable="true">
     
           <tr>
             <td>Вы подписанны:</td>
