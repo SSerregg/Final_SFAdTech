@@ -1,5 +1,6 @@
 <?php
 
+namespace DataBase;
 
 class BD_Config{
 

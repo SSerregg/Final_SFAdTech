@@ -1,5 +1,7 @@
 <?php 
 	
+    namespace Application\core;
+
 	class Route
 	{
         public static function error() {
@@ -25,19 +27,19 @@
 
 
         $model_name = 'Model_'.$controller_name;
-        $model_file_name = '../application/models/' . $model_name . '.php';
+        $model_file_name = MODELS. $model_name . '.php';
     
         if (file_exists($model_file_name)) {
-            include_once $model_file_name;
+            //include_once $model_file_name;
         } else {
             $model_name = null;
         }
 
-        $controller_file = '../application/controllers/Controller_' . $controller_name . '.php';
+        $controller_file = CONTROLLERS.'Controller_' . $controller_name . '.php';
         if (file_exists($controller_file)) {
 
-            include_once $controller_file;
-            $controller_class = 'Controller_' . $controller_name;
+            //include_once $controller_file;
+            $controller_class = 'Application\controllers\Controller_'. $controller_name;
 
             if(class_exists($controller_class)){
 

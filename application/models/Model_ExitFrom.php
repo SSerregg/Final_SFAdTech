@@ -1,6 +1,8 @@
 <?php
 
-
+namespace Application\models;
+use \PDO;
+use \PDOException;
 
 class Model_ExitFrom
 {

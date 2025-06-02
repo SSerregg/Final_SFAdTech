@@ -1,5 +1,12 @@
 <?php
 
+namespace Application\models;
+
+use Application\core\Model;
+
+use \PDO;
+use \PDOException;
+
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -95,7 +102,7 @@ class Model_Redirect extends Model
             $stmt2 ->execute();
             $resultID = $stmt2->FETCH(PDO::FETCH_ASSOC);
 
-            $logger = new Monolog\Logger('LOGGER');
+            $logger = new Logger('LOGGER');
             $logger->pushHandler(new StreamHandler('../logs/log.txt', Logger::NOTICE));
 
             $logger->notice('Redirect id: '.$resultID['id'], array('ip' => $ip, 'agent' => $userAgent));

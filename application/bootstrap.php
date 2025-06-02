@@ -1,13 +1,13 @@
 <?php
 
 session_start();
-require_once '../vendor/autoload.php';
-require_once '../bd/BD_Config.php'; 
-include_once '../application/core/Model.php'; 
-require_once '../application/core/Controller.php';
-require_once '../application/core/ControllerWithModel.php';
-require_once '../application/core/View.php';
-require_once '../application/core/Route.php'; 
+require_once ROOT.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
+//require_once ROOT.'bd'.DIRECTORY_SEPARATOR.'BD_Config.php'; 
+//include_once CORE.'Model.php'; 
+//require_once CORE.'Controller.php';
+//require_once CORE.'ControllerWithModel.php';
+//require_once CORE.'View.php';
+//require_once CORE.'Route.php'; 
 
 
-Route::start();
+Application\core\Route::start();

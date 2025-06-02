@@ -1,5 +1,11 @@
 <?php
 
+namespace Application\models;
+
+use Application\core\Model;
+use \PDO;
+use \PDOException;
+
 class Model_WebMasterStatisticJS extends Model 
 {
     public static function statistic()

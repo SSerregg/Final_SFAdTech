@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\core\ControllerWithModel;
 
 class Controller_Client extends ControllerWithModel {
 

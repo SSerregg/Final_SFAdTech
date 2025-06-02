@@ -1,5 +1,10 @@
 <?php
 
+namespace Application\models;
+
+use Application\core\Model;
+use \PDO;
+use \PDOException;
 
 class Model_SubscribeWebMaster extends Model
 {

@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\models\Model_CreateOffer;
 
 class Controller_CreateOffer extends Model_CreateOffer {
 

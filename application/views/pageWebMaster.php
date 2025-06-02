@@ -56,7 +56,7 @@ echo '<div class="tableWebMaster">
           </tr>
           <tr>
            <td>Ваша ссылка:</td>
-           <th>'.$valueSub['link'].'</th>
+           <th draggable="false">'.$valueSub['link'].'</th>
           </tr>        
          
           </table>';

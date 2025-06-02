@@ -1,5 +1,11 @@
 <?php
 
+namespace Application\models;
+
+use Application\core\Model;
+use \PDO;
+use \PDOException;
+
 class Model_UnsubscribeWebMaster extends Model
 {
     protected static function stmt ($db, $offerID, $webMaster) {

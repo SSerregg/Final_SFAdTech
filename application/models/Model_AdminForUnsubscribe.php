@@ -1,6 +1,12 @@
 <?php
+namespace Application\models;
 
-require_once '../application/models/Model_UnsubscribeWebMaster.php';
+use Application\core\Model;
+use \PDO;
+use \PDOException;
+
+///require_once MODELS.'Model_UnsubscribeWebMaster.php';
+
 
 class Model_AdminForUnsubscribe extends Model_UnsubscribeWebMaster{
 

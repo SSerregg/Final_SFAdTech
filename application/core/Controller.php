@@ -1,5 +1,6 @@
 <?php
 
+namespace Application\core;
 
 class Controller{
 

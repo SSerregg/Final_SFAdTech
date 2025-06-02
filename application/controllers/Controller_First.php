@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\core\Controller;
 
 class Controller_First extends Controller {
 

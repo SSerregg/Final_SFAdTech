@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\core;
+
 
 class ControllerWithModel{
 
@@ -9,8 +11,10 @@ class ControllerWithModel{
     
 
     public function __construct($model){
-        //$this->data = $model::index();
-        $this->data = $model::standart();
+        
+        $nameSpace = 'Application\models\\'.$model;
+        $this->data = $nameSpace::standart();
+
         $this->view = new View();
     }
 }

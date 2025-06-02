@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\models\Model_Redirect;
 
 class Controller_Redirect extends Model_Redirect {
 

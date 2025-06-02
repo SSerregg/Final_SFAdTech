@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\models\Model_UnsubscribeWebMaster;
 
 class Controller_UnsubscribeWebMaster extends Model_UnsubscribeWebMaster {
 

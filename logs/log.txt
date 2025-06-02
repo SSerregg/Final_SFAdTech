@@ -1,2 +1,3 @@
 [2025-05-31T19:52:19.764278+08:00] LOGGER.NOTICE: Redirect id: 1 {"ip":"127.0.0.1","agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0"} []
 [2025-05-31T19:52:33.147734+08:00] LOGGER.NOTICE: Redirect id: 2 {"ip":"127.0.0.1","agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0"} []
+[2025-06-03T06:38:35.341444+08:00] LOGGER.NOTICE: Redirect id: 3 {"ip":"127.0.0.1","agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0"} []

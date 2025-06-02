@@ -1,5 +1,8 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\models\Model_ActiveOffer;
 
 class Controller_ActiveOffer extends Model_ActiveOffer {
 
